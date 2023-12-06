@@ -5,7 +5,50 @@ const { combine, timestamp, json, errors } = winston.format;
 const { Logtail } = require("@logtail/node");
 const { LogtailTransport } = require("@logtail/winston");
 
-const logtail = new Logtail('Rn1kg4RDXFZHGkx1692qcQ6q');
+const logtail = new Logtail(process.env.SOURCE_TOKEN);
+
+const logger = winston.createLogger({
+  level: process.env.LOG_LEVEL || "info",
+  format: combine(timestamp(), json()),
+  transports: [
+    new winston.transports.Console(),
+    // new winston.transports.File({
+    //   filename: "combined.log",
+    // }),
+    // new winston.transports.File({
+    //   filename: "app-error.log",
+    //   level: "error",
+    // }),
+    new LogtailTransport(logtail),
+  ],
+});
+
+const errorFilter = winston.format((info, opts) => {
+  return info.level === "error" ? info : false;
+});
+
+const childLogger = logger.child({
+  subscriberId: "f9ed4675f1c53513c61a3b3b4e25b4c0",
+});
+
+
+export async function GET() {
+  logger.error("DEU ERRO AQUI EM");
+  logger.info("DEU INFO AQUI EM");
+  childLogger.info("info");
+  childLogger.info("another info", {
+    rave: "kntx",
+    up: "universo parallelo",
+  });
+
+  // childLogger.info(new Error("info with new error"), {
+  //   rave: "kntx",
+  //   up: "universo parallelo",
+  // });
+
+  // throw new Error("An uncaught error");
+  return Response.json({ success: true });
+}
 
 // const logger = winston.createLogger({
 //   level: process.env.LOG_LEVEL || "info",
@@ -26,25 +69,6 @@ const logtail = new Logtail('Rn1kg4RDXFZHGkx1692qcQ6q');
 //   exitOnError: false,
 // });
 
-const logger = winston.createLogger({
-  level: process.env.LOG_LEVEL || "info",
-  format: combine(timestamp(), json()),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({
-      filename: "combined.log",
-    }),
-    new winston.transports.File({
-      filename: "app-error.log",
-      level: "error",
-    }),
-    new LogtailTransport(logtail),
-  ],
-});
-
-const errorFilter = winston.format((info, opts) => {
-  return info.level === "error" ? info : false;
-});
 
 // const infoFilter = winston.format((info, opts) => {
 //   return info.level === "info" ? info : false;
@@ -88,25 +112,3 @@ const errorFilter = winston.format((info, opts) => {
 //   transports: [new winston.transports.Console(), new winston.transports.Console(), new LogtailTransport(logtail)],
 // });
 
-const childLogger = logger.child({
-  subscriberId: "f9ed4675f1c53513c61a3b3b4e25b4c0",
-});
-
-
-export async function GET() {
-  logger.error("DEU ERRO AQUI EM");
-  logger.info("DEU INFO AQUI EM");
-  childLogger.info("info");
-  childLogger.info("another info", {
-    rave: "kntx",
-    up: "universo parallelo",
-  });
-
-  // childLogger.info(new Error("info with new error"), {
-  //   rave: "kntx",
-  //   up: "universo parallelo",
-  // });
-
-  // throw new Error("An uncaught error");
-  return Response.json({ success: true });
-}

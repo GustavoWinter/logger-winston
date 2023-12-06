@@ -8,3 +8,10 @@
 {"level":"error","message":"DEU ERRO AQUI EM","timestamp":"2023-12-06T13:47:28.087Z"}
 {"level":"info","message":"info","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:47:28.092Z"}
 {"level":"info","message":"another info","rave":"kntx","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:47:28.093Z","up":"universo parallelo"}
+{"level":"error","message":"DEU ERRO AQUI EM","timestamp":"2023-12-06T13:53:13.517Z"}
+{"level":"info","message":"info","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:53:13.522Z"}
+{"level":"info","message":"another info","rave":"kntx","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:53:13.523Z","up":"universo parallelo"}
+{"level":"error","message":"DEU ERRO AQUI EM","timestamp":"2023-12-06T14:00:46.908Z"}
+{"level":"info","message":"DEU INFO AQUI EM","timestamp":"2023-12-06T14:00:46.912Z"}
+{"level":"info","message":"info","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T14:00:46.913Z"}
+{"level":"info","message":"another info","rave":"kntx","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T14:00:46.914Z","up":"universo parallelo"}
