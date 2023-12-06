@@ -38,7 +38,7 @@ const logger = winston.createLogger({
       filename: "app-error.log",
       level: "error",
     }),
-    new LogtailTransport(logtail)
+    new LogtailTransport(logtail),
   ],
 });
 
@@ -92,7 +92,10 @@ const childLogger = logger.child({
   subscriberId: "f9ed4675f1c53513c61a3b3b4e25b4c0",
 });
 
+
 export async function GET() {
+  logger.error("DEU ERRO AQUI EM");
+  logger.info("DEU INFO AQUI EM");
   childLogger.info("info");
   childLogger.info("another info", {
     rave: "kntx",

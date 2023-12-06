@@ -5,3 +5,6 @@
 {"level":"info","message":"another info","rave":"kntx","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:18:37.719Z","up":"universo parallelo"}
 {"level":"info","message":"info","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:25:16.873Z"}
 {"level":"info","message":"another info","rave":"kntx","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:25:16.878Z","up":"universo parallelo"}
+{"level":"error","message":"DEU ERRO AQUI EM","timestamp":"2023-12-06T13:47:28.087Z"}
+{"level":"info","message":"info","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:47:28.092Z"}
+{"level":"info","message":"another info","rave":"kntx","subscriberId":"f9ed4675f1c53513c61a3b3b4e25b4c0","timestamp":"2023-12-06T13:47:28.093Z","up":"universo parallelo"}
