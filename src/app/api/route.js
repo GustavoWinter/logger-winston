@@ -22,6 +22,21 @@ const logger = winston.createLogger({
     new LogtailTransport(logtail),
   ],
 });
+const logge = winston.createLogger({
+  level: process.env.LOG_LEVEL || "info",
+  format: winston.format.cli(),
+  transports: [
+    new winston.transports.Console(),
+    // new winston.transports.File({
+    //   filename: "combined.log",
+    // }),
+    // new winston.transports.File({
+    //   filename: "app-error.log",
+    //   level: "error",
+    // }),
+    new LogtailTransport(logtail),
+  ],
+});
 
 const errorFilter = winston.format((info, opts) => {
   return info.level === "error" ? info : false;
@@ -33,6 +48,7 @@ const childLogger = logger.child({
 
 
 export async function GET() {
+  logge.error("AQUI DEU ERRO TAMBEM");
   logger.error("DEU ERRO AQUI EM");
   logger.info("DEU INFO AQUI EM");
   childLogger.info("info");
