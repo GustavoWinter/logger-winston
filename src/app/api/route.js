@@ -38,6 +38,7 @@ const logger = winston.createLogger({
       filename: "app-error.log",
       level: "error",
     }),
+    new LogtailTransport(logtail)
   ],
 });
 
