@@ -5,7 +5,7 @@ const { combine, timestamp, json, errors } = winston.format;
 const { Logtail } = require("@logtail/node");
 const { LogtailTransport } = require("@logtail/winston");
 
-const logtail = new Logtail("gEJaZSpVpXhhr88Dbq6dGpYs");
+const logtail = new Logtail(process.env.SOURCE_TOKEN);
 
 // const logger = winston.createLogger({
 //   level: process.env.LOG_LEVEL || "info",
