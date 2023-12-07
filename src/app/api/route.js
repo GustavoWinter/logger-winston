@@ -48,6 +48,7 @@ const childLogger = logger.child({
 
 
 export async function GET() {
+  console.error("!!!!!!!! AQUI DEU ERRO !!!!!!!!")
   logge.error("AQUI DEU ERRO TAMBEM");
   logger.error("DEU ERRO AQUI EM");
   logger.info("DEU INFO AQUI EM");
