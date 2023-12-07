@@ -2,11 +2,11 @@ const winston = require("winston");
 require("winston-daily-rotate-file");
 const { combine, timestamp, json, colorize } = winston.format;
 
-const { Logtail } = require("@logtail/node");
-const { LogtailTransport } = require("@logtail/winston");
+// const { Logtail } = require("@logtail/node");
+// const { LogtailTransport } = require("@logtail/winston");
 
-const logtail = new Logtail(`${process.env.SOURCE_TOKEN}`);
-console.log(logtail)
+// const logtail = new Logtail(`${process.env.SOURCE_TOKEN}`);
+console.log('OLA AQUI E O CONSOLE .LOG')
 
 const logger = winston.createLogger({
   level: `${process.env.LOG_LEVEL}` || 'info',
@@ -16,7 +16,7 @@ const logger = winston.createLogger({
     format: 'DD-MM-YYYY hh:mm:ss.SSS A',
   }), json()),
   transports: [
-    new LogtailTransport(logtail),
+    new winston.transports.Console(),
   ],
 });
 
