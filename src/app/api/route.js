@@ -2,7 +2,7 @@ const winston = require("winston");
 require("winston-daily-rotate-file");
 const { combine, timestamp, json, colorize } = winston.format;
 
-const logger = winston.createLogger({
+export const logger = winston.createLogger({
   level: `${process.env.LOG_LEVEL}` || 'info',
   transports: [
     new winston.transports.Console(),
