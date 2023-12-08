@@ -10,19 +10,18 @@ const logger = winston.createLogger({
     format: 'DD-MM-YYYY hh:mm:ss.SSS A',
   }), json()),
   transports: [
-    new winston.transports.Console(),
+    new winston.transports.Console({ stderrLevels: ['error']}),
   ],
 });
 
-logger.error('error');
-logger.warn('warn');
-logger.info('info');
-logger.verbose('verbose');
-logger.debug('debug');
-logger.silly('silly');
 
 export async function GET() {
-  logger.info("DEU INFO AQUI EM");
+  logger.error('DEU ERRO');
+  logger.warn('warn');
+  logger.info('info');
+  logger.verbose('verbose');
+  logger.debug('debug');
+  logger.silly('silly');
 
   return Response.json({ success: true });
 }
