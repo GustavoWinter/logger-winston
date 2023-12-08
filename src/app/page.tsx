@@ -1,6 +1,9 @@
 import Image from 'next/image'
+import { logger } from './api/route'
 
 export default function Home() {
+  logger.error('ESSE E O WINSTON');
+  console.log('ESSE E O CONSOLE LOG')
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
