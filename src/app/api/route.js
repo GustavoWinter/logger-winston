@@ -11,14 +11,17 @@ const logger = winston.createLogger({
   }), json()),
   transports: [
     new winston.transports.Console(),
-
   ],
 });
 
-logger.error("DEU ERRO AQUI EM");
+logger.error('error');
+logger.warn('warn');
+logger.info('info');
+logger.verbose('verbose');
+logger.debug('debug');
+logger.silly('silly');
 
 export async function GET() {
-  process.stdout("Ola mundo!");
   logger.info("DEU INFO AQUI EM");
 
   return Response.json({ success: true });
